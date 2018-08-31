@@ -12,10 +12,10 @@ let urlString = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
 
 public struct School: Codable {
     //let dbn: String
-    //let num_of_sat_test_takers: String
-    //let sat_critical_reading_avg_score: String
-    //let sat_writing_avg_score: String
-    let school_name: String
+    let numOfSatTestTakers: String
+    let satCriticalReadingAvgScore: String
+    let satWritingAvgScore: String
+    let schoolName: String
 }
 
 class ViewController: UIViewController {
@@ -32,10 +32,12 @@ class ViewController: UIViewController {
     func getData() {
         URLSession.shared.dataTask(with: url!) { data, _, error in
         
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                let dataDict = try JSONDecoder().decode([School].self, from: data!)
+                let dataDict = try decoder.decode([School].self, from: data!)
                 print(dataDict)
-                let schoolName = dataDict[1].school_name
+                let schoolName = dataDict[1].schoolName
             } catch (let error) {
                 print(error.localizedDescription)
             }
