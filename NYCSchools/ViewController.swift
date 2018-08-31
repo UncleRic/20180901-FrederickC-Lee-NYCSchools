@@ -10,6 +10,59 @@ import UIKit
 
 let urlString = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
 
+
+let dataSource1 = """
+{
+"dbn" : "01M292",
+"num_of_sat_test_takers" : "29",
+"sat_critical_reading_avg_score" : "355",
+"sat_math_avg_score" : "404",
+"sat_writing_avg_score" : "363",
+"school_name" : "HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES"
+}
+""".data(using: .utf8)
+
+let dataSource = """
+[{
+"dbn" : "01M292",
+"num_of_sat_test_takers" : "29",
+"sat_critical_reading_avg_score" : "355",
+"sat_math_avg_score" : "404",
+"sat_writing_avg_score" : "363",
+"school_name" : "HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES"
+},
+{
+"dbn" : "79Q950",
+"num_of_sat_test_takers" : "8",
+"sat_critical_reading_avg_score" : "496",
+"sat_math_avg_score" : "400",
+"sat_writing_avg_score" : "426",
+"school_name" : "GED PLUS s CITYWIDE"
+},
+{
+"dbn" : "79X490",
+"num_of_sat_test_takers" : "9",
+"sat_critical_reading_avg_score" : "367",
+"sat_math_avg_score" : "370",
+"sat_writing_avg_score" : "360",
+"school_name" : "PHOENIX ACADEMY"
+}]
+""".data(using: .utf8)
+
+// -------------------------
+
+public struct School: Codable {
+    let dbn: String
+    let num_of_sat_test_takers: String
+    let sat_critical_reading_avg_score: String
+    let sat_writing_avg_score: String
+    let school_name: String
+}
+
+public struct SchoolModel: Codable {
+    let schools: [School]
+}
+
 class ViewController: UIViewController {
 
     var url = URL(string: urlString)
@@ -23,7 +76,13 @@ class ViewController: UIViewController {
     
     func getData() {
         URLSession.shared.dataTask(with: url!) { data, _, error in
-            let dataString = String(data: data!, encoding: .ascii)
+          //  let dataString = String(data: dataSource1!, encoding: .ascii)
+            do {
+                let dataDict = try JSONDecoder().decode(SchoolModel.self, from: dataSource!)
+                print(dataDict)
+            } catch (let error) {
+                print(error.localizedDescription)
+            }
             
             DispatchQueue.main.async { [weak self] in
                 if let msg = error?.localizedDescription {
