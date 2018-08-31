@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         URLSession.shared.dataTask(with: url!) { data, _, error in
           //  let dataString = String(data: dataSource1!, encoding: .ascii)
             do {
-                let dataDict = try JSONDecoder().decode(SchoolModel.self, from: dataSource!)
+                let dataDict = try JSONDecoder().decode([School].self, from: dataSource!)
                 print(dataDict)
             } catch (let error) {
                 print(error.localizedDescription)
