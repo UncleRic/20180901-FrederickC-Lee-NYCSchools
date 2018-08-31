@@ -11,10 +11,10 @@ import UIKit
 let urlString = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
 
 public struct School: Codable {
-    let dbn: String
-    let num_of_sat_test_takers: String
-    let sat_critical_reading_avg_score: String
-    let sat_writing_avg_score: String
+    //let dbn: String
+    //let num_of_sat_test_takers: String
+    //let sat_critical_reading_avg_score: String
+    //let sat_writing_avg_score: String
     let school_name: String
 }
 
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
             do {
                 let dataDict = try JSONDecoder().decode([School].self, from: data!)
                 print(dataDict)
+                let schoolName = dataDict[1].school_name
             } catch (let error) {
                 print(error.localizedDescription)
             }
