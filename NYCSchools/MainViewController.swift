@@ -8,10 +8,10 @@
 
 import UIKit
 
-let urlString = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
+let urlString = "https://data.cityofnewyork.us/resource/734v-jeq5.json?$order=school_name"
 
 public struct School: Codable {
-    //let dbn: String
+    // let dbn: String
     let numOfSatTestTakers: String
     let satCriticalReadingAvgScore: String
     let satWritingAvgScore: String
@@ -19,34 +19,28 @@ public struct School: Codable {
 }
 
 class MainViewController: UIViewController {
-
-    @IBOutlet weak var pickerView: UIPickerView!
+    
+    @IBOutlet var pickerView: UIPickerView!
     
     var url = URL(string: urlString)
-    var dataDict:[School] = []
+    var dataDict: [School] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        getData()
     }
     
-//    override func viewDidLayoutSubviews() {
-//        pickerView.reloadAllComponents()
-//    }
-//
     // ----------------------------------------------------------------------------------
     
     func getData() {
         URLSession.shared.dataTask(with: url!) { data, _, error in
-        
+            
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
                 self.dataDict = try decoder.decode([School].self, from: data!)
-                print(self.dataDict)
-                
-                let schoolName = self.dataDict[1].schoolName
-            } catch (let error) {
+            } catch let error {
                 print(error.localizedDescription)
             }
             
@@ -59,27 +53,25 @@ class MainViewController: UIViewController {
                     alertController.addAction(dismissAction)
                     self?.present(alertController, animated: true, completion: nil)
                 } else {
-                self!.pickerView.reloadAllComponents()
-                let schoolName = self!.dataDict[1].schoolName
+                    self!.pickerView.reloadAllComponents()
+                    let schoolName = self!.dataDict[1].schoolName
                     print("School Name: \(schoolName)")
-                   print("Success")
+                    print("Success")
                 }
             }
-            }.resume()
+        }.resume()
     }
-
+    
     // ----------------------------------------------------------------------------------
     
     @IBAction func DoSomething(_ sender: UIBarButtonItem) {
         getData()
-        
         return
     }
     
     @IBAction func exitAction(_ sender: Any) {
         exit(0)
     }
-    
 }
 
 // ============================================================================================
@@ -94,10 +86,10 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-       return dataDict[row].schoolName
+        return dataDict[row].schoolName
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("row: \(row)")
+    }
 }
-

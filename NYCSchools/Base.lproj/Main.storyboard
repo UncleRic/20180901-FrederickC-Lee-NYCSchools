@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NYC Schools" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyp-cQ-O4u">
-                                <rect key="frame" x="131.5" y="54" width="112.5" height="37"/>
+                                <rect key="frame" x="131" y="54" width="113" height="37"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
                                 <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -38,9 +38,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-CV-EPI">
-                                <rect key="frame" x="2" y="120" width="375" height="310"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-CV-EPI">
+                                <rect key="frame" x="2" y="120" width="375" height="502"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Gdg-zG-ddx"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2Z2-6F-A2e"/>
@@ -50,10 +49,14 @@
                         <color key="backgroundColor" red="0.77363037999999995" green="1" blue="0.94208932970000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="oCH-Ur-bsD" secondAttribute="trailing" constant="-17" id="5vf-p3-KYs"/>
+                            <constraint firstItem="MKf-CV-EPI" firstAttribute="bottom" secondItem="oCH-Ur-bsD" secondAttribute="top" id="BU5-WV-Lez"/>
                             <constraint firstItem="uyp-cQ-O4u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="N9a-De-ESf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oCH-Ur-bsD" secondAttribute="bottom" constant="1" id="OP9-8C-GBM"/>
                             <constraint firstItem="uyp-cQ-O4u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ohy-g5-uoz"/>
                             <constraint firstItem="oCH-Ur-bsD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1" id="adT-Cf-ZNa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MKf-CV-EPI" secondAttribute="trailing" constant="-18" id="eNY-0I-SiQ"/>
+                            <constraint firstItem="MKf-CV-EPI" firstAttribute="top" secondItem="uyp-cQ-O4u" secondAttribute="bottom" constant="29" id="kXW-rO-OZd"/>
+                            <constraint firstItem="MKf-CV-EPI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="sXH-jw-ERn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
