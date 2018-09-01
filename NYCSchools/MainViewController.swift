@@ -53,27 +53,26 @@ class MainViewController: UIViewController {
     func getData() {
         URLSession.shared.dataTask(with: url!) { data, _, error in
             
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            do {
-                self.dataDict = try decoder.decode([School].self, from: data!)
-            } catch let error {
-                print(error.localizedDescription)
+            if data != nil {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                do {
+                    self.dataDict = try decoder.decode([School].self, from: data!)
+                } catch let error {
+                    print(error.localizedDescription)
+                }
             }
-            
             DispatchQueue.main.async { [weak self] in
-                
                 if let msg = error?.localizedDescription {
+                    self?.pickerView.isHidden = true
                     let title = "Network Error"
                     let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
                     let dismissAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alertController.addAction(dismissAction)
                     self?.present(alertController, animated: true, completion: nil)
                 } else {
-                    self!.pickerView.reloadAllComponents()
-                    let schoolName = self!.dataDict[1].schoolName
-                    print("School Name: \(schoolName)")
-                    print("Success")
+                    self?.pickerView.isHidden = false
+                    self?.pickerView.reloadAllComponents()
                 }
             }
         }.resume()
@@ -90,11 +89,6 @@ class MainViewController: UIViewController {
     // ----------------------------------------------------------------------------------
     
     // MARK: - Action Methods
-    
-    @IBAction func DoSomething(_ sender: UIBarButtonItem) {
-        getData()
-        return
-    }
     
     @IBAction func exitAction(_ sender: Any) {
         exit(0)
@@ -122,7 +116,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
             let label = UILabel()
             label.text = dataDict[row].schoolName
             label.textColor = UIColor.purple
-            label.font = UIFont(name: "Georgia", size: 18.0)
+            label.font = UIFont(name: "Georgia", size: 16.0)
             label.textAlignment = .center
             return label
         }()

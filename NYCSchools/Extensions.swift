@@ -47,3 +47,28 @@ extension UIView {
         }
     }
 }
+
+extension NSAttributedString {
+    class func palatino(inputString: String) -> NSAttributedString {
+        let fnt = UIFont(name: "Palatino", size: 18.0)
+        let attributedString = NSMutableAttributedString(string: inputString, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): fnt!]))
+        return attributedString
+    }
+
+    class func palatinoWithSizeAndColor(inputString: String, size: CGFloat, color: UIColor) -> NSAttributedString {
+        let font = UIFont(name: "Palatino", size: size)
+        let attributedString = NSMutableAttributedString(string: inputString, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): font!, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color]))
+        return attributedString
+    }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+    guard let input = input else { return nil }
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value) })
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+    return input.rawValue
+}

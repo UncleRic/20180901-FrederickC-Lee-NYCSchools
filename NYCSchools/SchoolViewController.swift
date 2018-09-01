@@ -31,8 +31,29 @@ class SchoolViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         schoolLabel.text = schoolData!.schoolName
-        readingLabel.text = "Critcal Reading Avg Score: \(schoolData!.satCriticalReadingAvgScore)"
-        mathLabel.text = "Math Avg Score: \(schoolData!.satMathAvgScore)"
-        writingLabel.text = "Writing Avg Score: \(schoolData!.satWritingAvgScore)"
+
+        // Reading:
+        var msg = NSAttributedString.palatino(inputString: "Critical Reading Avg Score: ")
+        var value = NSAttributedString.palatinoWithSizeAndColor(inputString: schoolData!.satCriticalReadingAvgScore, size: 18, color: .red)
+        var attributedString: NSMutableAttributedString = NSMutableAttributedString(attributedString: msg)
+        attributedString.append(value)
+        readingLabel.attributedText = attributedString
+
+        // -----------------------------------------------
+        // Math Score:
+        msg = NSAttributedString.palatino(inputString: "Math Avg Score: ")
+        value = NSAttributedString.palatinoWithSizeAndColor(inputString: schoolData!.satMathAvgScore, size: 18, color: .red)
+        attributedString = NSMutableAttributedString(attributedString: msg)
+        attributedString.append(value)
+        mathLabel.attributedText = attributedString
+
+        // -----------------------------------------------
+        // Writing:
+        msg = NSAttributedString.palatino(inputString: "Writing Avg Score: ")
+        value = NSAttributedString.palatinoWithSizeAndColor(inputString: schoolData!.satWritingAvgScore, size: 18, color: .red)
+        attributedString = NSMutableAttributedString(attributedString: msg)
+        attributedString.append(value)
+        writingLabel.attributedText = attributedString
     }
 }
+
