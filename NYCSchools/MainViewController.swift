@@ -10,21 +10,24 @@ import UIKit
 
 let urlString = "https://data.cityofnewyork.us/resource/734v-jeq5.json?$order=school_name"
 
+struct Segue {
+    static let kSchool = "ShowSchool"
+}
+
 public struct School: Codable {
-    // let dbn: String
     let numOfSatTestTakers: String
     let satCriticalReadingAvgScore: String
+    let satMathAvgScore: String
     let satWritingAvgScore: String
     let schoolName: String
 }
 
 class MainViewController: UIViewController {
-    
     @IBOutlet var pickerView: UIPickerView!
     
     var url = URL(string: urlString)
     var dataDict: [School] = []
-
+    var row = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,14 @@ class MainViewController: UIViewController {
         }.resume()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if segue.identifier == "ShowSchool" {
+            if let schoolVC = (segue.destination as? SchoolViewController) {
+                schoolVC.schoolData = dataDict[row]
+            }
+        }
+    }
+    
     // ----------------------------------------------------------------------------------
     
     @IBAction func DoSomething(_ sender: UIBarButtonItem) {
@@ -90,6 +101,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("row: \(row)")
+        self.row = row
+        performSegue(withIdentifier: Segue.kSchool, sender: self)
     }
 }

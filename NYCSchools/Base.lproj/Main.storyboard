@@ -62,11 +62,76 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="MKf-CV-EPI" id="FNV-1V-5pm"/>
+                        <segue destination="Jjn-HE-oEF" kind="showDetail" identifier="ShowSchool" id="dRQ-R3-2Oq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--School View Controller-->
+        <scene sceneID="Zph-gt-e6w">
+            <objects>
+                <viewController id="Jjn-HE-oEF" customClass="SchoolViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="SchoolVC" id="AOD-NU-3VO" userLabel="School">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNi-pW-czf">
+                                <rect key="frame" x="0.0" y="52" width="375" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="gLr-NK-DgL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="x4P-z9-cTb" userLabel="Test-Results Stack">
+                                <rect key="frame" x="0.0" y="129" width="375" height="89.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab4-pn-E70">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgo-Tr-rzg">
+                                        <rect key="frame" x="0.0" y="34.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Writing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsR-Gu-EVd">
+                                        <rect key="frame" x="0.0" y="69" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.74821950449999997" blue="0.65809800650000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dNi-pW-czf" firstAttribute="top" secondItem="hoP-s2-SbS" secondAttribute="top" constant="32" id="Vkh-BJ-jZS"/>
+                            <constraint firstItem="hoP-s2-SbS" firstAttribute="trailing" secondItem="dNi-pW-czf" secondAttribute="trailing" id="XIV-7f-B3S"/>
+                            <constraint firstItem="dNi-pW-czf" firstAttribute="top" secondItem="hoP-s2-SbS" secondAttribute="top" constant="32" id="i6n-Lv-wdE"/>
+                            <constraint firstItem="dNi-pW-czf" firstAttribute="leading" secondItem="hoP-s2-SbS" secondAttribute="leading" id="imO-z9-U2y"/>
+                            <constraint firstItem="hoP-s2-SbS" firstAttribute="trailing" secondItem="x4P-z9-cTb" secondAttribute="trailing" id="jcu-l6-X9p"/>
+                            <constraint firstItem="x4P-z9-cTb" firstAttribute="leading" secondItem="hoP-s2-SbS" secondAttribute="leading" id="lKJ-ZP-HLs"/>
+                            <constraint firstItem="x4P-z9-cTb" firstAttribute="top" secondItem="dNi-pW-czf" secondAttribute="bottom" constant="45" id="nsJ-cd-Qmz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hoP-s2-SbS"/>
+                    </view>
+                    <connections>
+                        <outlet property="mathLabel" destination="kgo-Tr-rzg" id="kgq-Fi-Vvz"/>
+                        <outlet property="readingLabel" destination="Ab4-pn-E70" id="GA5-K5-5bH"/>
+                        <outlet property="schoolLabel" destination="dNi-pW-czf" id="hdN-xB-nCr"/>
+                        <outlet property="writingLabel" destination="WsR-Gu-EVd" id="oDO-ot-X2o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqB-KP-tfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048.8" y="130.88455772113943"/>
         </scene>
     </scenes>
 </document>
