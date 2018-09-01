@@ -8,8 +8,8 @@
 import UIKit
 
 extension UIColor {
-    class func skyBlue() -> UIColor {
-        return UIColor(red: 0.51, green: 0.784, blue: 0.878, alpha: 1.0)
+    class var skyBlue: UIColor {
+        return UIColor(red: 217 / 255, green: 234 / 255, blue: 239 / 255, alpha: 1.0)
     }
 }
 

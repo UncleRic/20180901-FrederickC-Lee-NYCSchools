@@ -60,14 +60,15 @@ class SchoolViewController: UIViewController {
         // -----------------------------------------------
         // Description:
         let descString = """
-        The most recent school level results for New York City on the SAT. Results are available at the school level for the graduating seniors of 2012. Records contain 2012 College-bound seniors mean SAT scores taken during SY 2012.
+        The most recent school level results for New York City on the SAT.\nResults are available at the school level for the graduating seniors of 2012.\nRecords contain 2012 College-bound seniors mean SAT scores taken during SY 2012.
         """
-        
+    
         msg = NSAttributedString.palatinoWithSizeAndColor(inputString: descString, size: 18.0, color: .gray)
         textView.attributedText = msg
     }
 
     func viewLayout() {
+        view.backgroundColor = UIColor.skyBlue
         textView.anchor(top: nil,
                         bottom: view.safeAreaLayoutGuide.bottomAnchor,
                         left: view.safeAreaLayoutGuide.leftAnchor,
@@ -76,8 +77,8 @@ class SchoolViewController: UIViewController {
                         centerXAnchor: nil,
                         paddingTop: 0,
                         paddingLeft: 0,
-                        paddingBottom: -80,
-                        paddingRight: 0, width: 0, height: 300)
+                        paddingBottom: -10,
+                        paddingRight: 0, width: 0, height: 200)
     }
 }
 

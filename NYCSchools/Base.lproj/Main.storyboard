@@ -111,7 +111,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.74821950449999997" blue="0.65809800650000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96908278545371618" green="1" blue="0.96012549466162056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dNi-pW-czf" firstAttribute="top" secondItem="hoP-s2-SbS" secondAttribute="top" constant="32" id="Vkh-BJ-jZS"/>
                             <constraint firstItem="hoP-s2-SbS" firstAttribute="trailing" secondItem="dNi-pW-czf" secondAttribute="trailing" id="XIV-7f-B3S"/>
