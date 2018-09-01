@@ -13,7 +13,8 @@ class SchoolViewController: UIViewController {
     @IBOutlet var mathLabel: UILabel!
     @IBOutlet var writingLabel: UILabel!
     @IBOutlet var textView: UITextView!
-
+    @IBOutlet weak var swipeDownArrowImageView: UIImageView!
+    
     var schoolData: School?
 
     override var prefersStatusBarHidden: Bool {
