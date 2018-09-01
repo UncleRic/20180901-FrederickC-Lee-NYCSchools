@@ -59,10 +59,10 @@ class MainViewController: UIViewController {
                              right: nil,
                              centerYAnchor: nil,
                              centerXAnchor: view.centerXAnchor,
-                             paddingTop: 80,
+                             paddingTop: 50,
                              paddingLeft: 0,
                              paddingBottom: 0,
-                             paddingRight: 0, width: 175, height: 60)
+                             paddingRight: 0, width: 240, height: 60)
         
         pickerView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                           bottom: view.safeAreaLayoutGuide.bottomAnchor,
