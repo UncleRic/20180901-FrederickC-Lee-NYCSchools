@@ -24,11 +24,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ric's Code Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvv-P6-Xzl">
-                                <rect key="frame" x="75" y="89" width="225" height="37"/>
+                                <rect key="frame" x="75" y="89" width="225" height="43.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="7ET-Ky-Hl1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="997" constant="225" id="7ET-Ky-Hl1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="27"/>
                                 <color key="textColor" red="0.52434909340000002" green="0.082970328630000006" blue="0.79630941150000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
