@@ -1,10 +1,9 @@
-//
 //  Extensions.swift
 //  NYCSchools
 //
 //  Created by Frederick C. Lee on 8/31/18.
 //  Copyright © 2018 Amourine Technologies. All rights reserved.
-//
+// ----------------------------------------------------------------------------------
 
 import UIKit
 
@@ -20,9 +19,8 @@ extension UIView {
                 centerYAnchor: NSLayoutYAxisAnchor?, centerXAnchor: NSLayoutXAxisAnchor?,
                 paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat,
                 paddingRight: CGFloat, width: CGFloat, height: CGFloat = 0) {
-        
         self.translatesAutoresizingMaskIntoConstraints = false
-        
+
         if let centerXAnchor = centerXAnchor {
             self.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
         }

@@ -1,10 +1,9 @@
-//
 //  MainViewController.swift
 //  NYCSchools
 //
 //  Created by Frederick C. Lee on 8/31/18.
 //  Copyright © 2018 Amourine Technologies. All rights reserved.
-//
+// ----------------------------------------------------------------------------------
 
 import UIKit
 
@@ -92,8 +91,6 @@ class MainViewController: UIViewController {
     
     // MARK: - Action Methods
     
-    @IBAction func mainReturn(_: UIStoryboardSegue) {}
-    
     @IBAction func DoSomething(_ sender: UIBarButtonItem) {
         getData()
         return
@@ -121,8 +118,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
                     viewForRow row: Int,
                     forComponent _: Int,
                     reusing _: UIView?) -> UIView {
-        
-        let myLabel:UILabel = {
+        let myLabel: UILabel = {
             let label = UILabel()
             label.text = dataDict[row].schoolName
             label.textColor = UIColor.purple
@@ -130,7 +126,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
             label.textAlignment = .center
             return label
         }()
-     
+        
         return myLabel
     }
     
