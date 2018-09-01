@@ -29,8 +29,23 @@ class MainViewController: UIViewController {
     var dataDict: [School] = []
     var row = 0
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
+                          bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                          left: view.safeAreaLayoutGuide.leftAnchor,
+                          right: view.safeAreaLayoutGuide.rightAnchor,
+                          centerYAnchor: nil,
+                          centerXAnchor: nil,
+                          paddingTop: 0,
+                          paddingLeft: 0,
+                          paddingBottom: -60,
+                          paddingRight: 0, width: 0, height: 0)
         getData()
     }
     
@@ -74,6 +89,7 @@ class MainViewController: UIViewController {
     }
     
     // ----------------------------------------------------------------------------------
+    
     // MARK: - Action Methods
     
     @IBAction func mainReturn(_: UIStoryboardSegue) {}
@@ -89,6 +105,7 @@ class MainViewController: UIViewController {
 }
 
 // ============================================================================================
+
 // MARK: -
 
 extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -100,8 +117,21 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         return dataDict.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataDict[row].schoolName
+    func pickerView(_: UIPickerView,
+                    viewForRow row: Int,
+                    forComponent _: Int,
+                    reusing _: UIView?) -> UIView {
+        
+        let myLabel:UILabel = {
+            let label = UILabel()
+            label.text = dataDict[row].schoolName
+            label.textColor = UIColor.purple
+            label.font = UIFont(name: "Georgia", size: 18.0)
+            label.textAlignment = .center
+            return label
+        }()
+     
+        return myLabel
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

@@ -16,6 +16,10 @@ class SchoolViewController: UIViewController {
 
     var schoolData: School?
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
         swipeGesture.direction = .down

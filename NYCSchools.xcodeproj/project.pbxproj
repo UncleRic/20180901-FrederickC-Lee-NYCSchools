@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1852125F213A073C0017FC01 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852125E213A073C0017FC01 /* SchoolViewController.swift */; };
+		18521263213A27B60017FC01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18521262213A27B60017FC01 /* Extensions.swift */; };
 		18B624E82139A8FC0067264A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B624E72139A8FC0067264A /* AppDelegate.swift */; };
 		18B624EA2139A8FC0067264A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B624E92139A8FC0067264A /* MainViewController.swift */; };
 		18B624ED2139A8FC0067264A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B624EB2139A8FC0067264A /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1852125E213A073C0017FC01 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
+		18521262213A27B60017FC01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		18B624E42139A8FC0067264A /* NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYCSchools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B624E72139A8FC0067264A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B624E92139A8FC0067264A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				18B624E72139A8FC0067264A /* AppDelegate.swift */,
+				18521262213A27B60017FC01 /* Extensions.swift */,
 				18B624E92139A8FC0067264A /* MainViewController.swift */,
 				1852125E213A073C0017FC01 /* SchoolViewController.swift */,
 				18B624EB2139A8FC0067264A /* Main.storyboard */,
@@ -203,6 +206,7 @@
 				18B624EA2139A8FC0067264A /* MainViewController.swift in Sources */,
 				18B624E82139A8FC0067264A /* AppDelegate.swift in Sources */,
 				1852125F213A073C0017FC01 /* SchoolViewController.swift in Sources */,
+				18521263213A27B60017FC01 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
