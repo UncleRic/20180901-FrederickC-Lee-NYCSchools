@@ -74,6 +74,9 @@ class MainViewController: UIViewController {
     }
     
     // ----------------------------------------------------------------------------------
+    // MARK: - Action Methods
+    
+    @IBAction func mainReturn(_: UIStoryboardSegue) {}
     
     @IBAction func DoSomething(_ sender: UIBarButtonItem) {
         getData()
@@ -86,6 +89,7 @@ class MainViewController: UIViewController {
 }
 
 // ============================================================================================
+// MARK: -
 
 extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -130,6 +130,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqB-KP-tfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="oxU-p6-pKq">
+                    <connections>
+                        <segue destination="NIp-fL-CyW" kind="unwind" unwindAction="mainReturn:" id="1u3-iW-mZu"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <exit id="NIp-fL-CyW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1048.8" y="130.88455772113943"/>
         </scene>
