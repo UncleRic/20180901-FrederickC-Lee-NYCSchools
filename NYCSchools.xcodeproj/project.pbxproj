@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		1852125E213A073C0017FC01 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		18521262213A27B60017FC01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		18B439E0213AF95B006C0DED /* NYC Schools Code Challenge.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "NYC Schools Code Challenge.pdf"; sourceTree = "<group>"; };
 		18B624E42139A8FC0067264A /* NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYCSchools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B624E72139A8FC0067264A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B624E92139A8FC0067264A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		18B624DB2139A8FC0067264A = {
 			isa = PBXGroup;
 			children = (
+				18B439E0213AF95B006C0DED /* NYC Schools Code Challenge.pdf */,
 				18B624E62139A8FC0067264A /* NYCSchools */,
 				18B624FB2139A8FD0067264A /* NYCSchoolsTests */,
 				18B624E52139A8FC0067264A /* Products */,

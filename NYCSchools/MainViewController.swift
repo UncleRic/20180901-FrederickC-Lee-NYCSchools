@@ -89,9 +89,29 @@ class MainViewController: UIViewController {
     
     // ----------------------------------------------------------------------------------
     
+    public func processData(data: Data?) -> [School] {
+        
+        var dataDict: [School] = []
+        
+        if data != nil {
+            let decoder = JSONDecoder()
+            
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                dataDict = try decoder.decode([School].self, from: data!)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        return dataDict
+    }
+    
+    // ----------------------------------------------------------------------------------
+    
     func getData() {
         URLSession.shared.dataTask(with: url!) { data, _, error in
-            
+            self.dataDict = self.processData(data: data)
             if data != nil {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
