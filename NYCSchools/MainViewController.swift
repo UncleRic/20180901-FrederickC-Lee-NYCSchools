@@ -22,7 +22,10 @@ public struct School: Codable {
 }
 
 class MainViewController: UIViewController {
+    @IBOutlet var logoImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var pickerView: UIPickerView!
+    @IBOutlet var toolBar: UIToolbar!
     
     var url = URL(string: urlString)
     var dataDict: [School] = []
@@ -34,6 +37,32 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewLayout()
+        getData()
+    }
+    
+    private func viewLayout() {
+        logoImageView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
+                          bottom: nil,
+                          left: nil,
+                          right: nil,
+                          centerYAnchor: nil,
+                          centerXAnchor: view.centerXAnchor,
+                          paddingTop: 4,
+                          paddingLeft: 0,
+                          paddingBottom: 0,
+                          paddingRight: 0, width: 175, height: 60)
+        
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor,
+                             bottom: nil,
+                             left: nil,
+                             right: nil,
+                             centerYAnchor: nil,
+                             centerXAnchor: view.centerXAnchor,
+                             paddingTop: 80,
+                             paddingLeft: 0,
+                             paddingBottom: 0,
+                             paddingRight: 0, width: 175, height: 60)
         
         pickerView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                           bottom: view.safeAreaLayoutGuide.bottomAnchor,
@@ -45,9 +74,19 @@ class MainViewController: UIViewController {
                           paddingLeft: 0,
                           paddingBottom: -60,
                           paddingRight: 0, width: 0, height: 0)
-        getData()
+        
+        toolBar.anchor(top: nil,
+                          bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                          left: view.safeAreaLayoutGuide.leftAnchor,
+                          right: view.safeAreaLayoutGuide.rightAnchor,
+                          centerYAnchor: nil,
+                          centerXAnchor: view.centerXAnchor,
+                          paddingTop: 80,
+                          paddingLeft: 0,
+                          paddingBottom: 0,
+                          paddingRight: 0, width: 0, height: 42)
+        
     }
-    
     // ----------------------------------------------------------------------------------
     
     func getData() {
